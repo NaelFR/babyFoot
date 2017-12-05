@@ -1,0 +1,51 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "game",
+            "otherEntityName": "game",
+            "otherEntityRelationshipName": "tournament"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "teams",
+            "otherEntityName": "team",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "tournaments"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "tournamentName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nbTeamMax",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20171205125755",
+    "entityTableName": "tournament",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

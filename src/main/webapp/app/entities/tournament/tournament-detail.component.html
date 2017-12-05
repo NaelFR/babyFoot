@@ -1,0 +1,37 @@
+
+<div *ngIf="tournament">
+    <h2><span jhiTranslate="babyFootManagerApp.tournament.detail.title">Tournament</span> {{tournament.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="babyFootManagerApp.tournament.tournamentName">Tournament Name</span></dt>
+        <dd>
+            <span>{{tournament.tournamentName}}</span>
+        </dd>
+        <dt><span jhiTranslate="babyFootManagerApp.tournament.nbTeamMax">Nb Team Max</span></dt>
+        <dd>
+            <span>{{tournament.nbTeamMax}}</span>
+        </dd>
+        <dt><span jhiTranslate="babyFootManagerApp.tournament.startDate">Start Date</span></dt>
+        <dd>
+            <span>{{tournament.startDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="babyFootManagerApp.tournament.endDate">End Date</span></dt>
+        <dd>
+            <span>{{tournament.endDate | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tournament/'+ tournament.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

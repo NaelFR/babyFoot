@@ -1,0 +1,26 @@
+{
+    "babyFootManagerApp": {
+        "tournament" : {
+            "home": {
+                "title": "Tournaments",
+                "createLabel": "Créer un nouveau Tournament",
+                "createOrEditLabel": "Créer ou éditer un Tournament"
+            },
+            "created": "Un nouveau Tournament a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Tournament avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Tournament avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Tournament {{ id }} ?"
+            },
+            "detail": {
+                "title": "Tournament"
+            },
+            "tournamentName": "Tournament Name",
+            "nbTeamMax": "Nb Team Max",
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "game": "Game",
+            "teams": "Teams"
+        }
+    }
+}

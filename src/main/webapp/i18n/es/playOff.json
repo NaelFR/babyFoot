@@ -1,0 +1,26 @@
+{
+    "babyFootManagerApp": {
+        "playOff" : {
+            "home": {
+                "title": "Play Offs",
+                "createLabel": "Crear nuevo Play Off",
+                "createOrEditLabel": "Crear o editar Play Off"
+            },
+            "created": "Un nuevo Play Off ha sido creado con el identificador {{ param }}",
+            "updated": "Un Play Off ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Play Off ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Play Off {{ id }}?"
+            },
+            "detail": {
+                "title": "Play Off"
+            },
+            "playOffName": "Play Off Name",
+            "nbTeamMax": "Nb Team Max",
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "game": "Game",
+            "teams": "Teams"
+        }
+    }
+}

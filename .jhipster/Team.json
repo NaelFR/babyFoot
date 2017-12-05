@@ -1,0 +1,54 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "teamName1",
+            "otherEntityName": "game",
+            "otherEntityRelationshipName": "team1"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "teamName2",
+            "otherEntityName": "game",
+            "otherEntityRelationshipName": "team2"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "teamName",
+            "otherEntityName": "player",
+            "otherEntityRelationshipName": "team"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "teams",
+            "relationshipName": "tournaments",
+            "otherEntityName": "tournament",
+            "otherEntityField": "tournamentName",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "teams",
+            "relationshipName": "playOffs",
+            "otherEntityName": "playOff",
+            "otherEntityField": "playOffName",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "teamName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20171205125758",
+    "entityTableName": "team",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

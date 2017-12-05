@@ -1,0 +1,37 @@
+
+<div *ngIf="playOff">
+    <h2><span jhiTranslate="babyFootManagerApp.playOff.detail.title">Play Off</span> {{playOff.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="babyFootManagerApp.playOff.playOffName">Play Off Name</span></dt>
+        <dd>
+            <span>{{playOff.playOffName}}</span>
+        </dd>
+        <dt><span jhiTranslate="babyFootManagerApp.playOff.nbTeamMax">Nb Team Max</span></dt>
+        <dd>
+            <span>{{playOff.nbTeamMax}}</span>
+        </dd>
+        <dt><span jhiTranslate="babyFootManagerApp.playOff.startDate">Start Date</span></dt>
+        <dd>
+            <span>{{playOff.startDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="babyFootManagerApp.playOff.endDate">End Date</span></dt>
+        <dd>
+            <span>{{playOff.endDate | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'play-off/'+ playOff.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
