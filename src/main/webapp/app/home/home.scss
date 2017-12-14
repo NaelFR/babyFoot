@@ -3,12 +3,17 @@
 Main page styles
 ========================================================================== */
 
-.hipster {
-    display: inline-block;
-    width: 347px;
-    height: 497px;
-    background: url("../../content/images/hipster.png") no-repeat center top;
-    background-size: contain;
+.home-container {
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.70),
+            rgba(0, 0, 0, 0.70)
+    ), url("../../content/images/background-babyfoot.jpg") no-repeat center top;
+    background-size: cover;
+    color: white;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
 }
 
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
@@ -19,8 +24,8 @@ only screen and (     -o-min-device-pixel-ratio: 2/1),
 only screen and (        min-device-pixel-ratio: 2),
 only screen and (                min-resolution: 192dpi),
 only screen and (                min-resolution: 2dppx) {
-    .hipster {
-        background: url("../../content/images/hipster2x.png") no-repeat center top;
-        background-size: contain;
+    .home-container {
+        background: url("../../content/images/background-babyfoot.jpg") no-repeat center top;
+        background-size: cover;
     }
 }
