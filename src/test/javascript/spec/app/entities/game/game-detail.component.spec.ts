@@ -1,11 +1,8 @@
 /* tslint:disable max-line-length */
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
-import { DatePipe } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
-import { JhiDateUtils, JhiDataUtils, JhiEventManager } from 'ng-jhipster';
+
 import { BabyFootManagerTestModule } from '../../../test.module';
-import { MockActivatedRoute } from '../../../helpers/mock-route.service';
 import { GameDetailComponent } from '../../../../../../main/webapp/app/entities/game/game-detail.component';
 import { GameService } from '../../../../../../main/webapp/app/entities/game/game.service';
 import { Game } from '../../../../../../main/webapp/app/entities/game/game.model';
@@ -22,17 +19,10 @@ describe('Component Tests', () => {
                 imports: [BabyFootManagerTestModule],
                 declarations: [GameDetailComponent],
                 providers: [
-                    JhiDateUtils,
-                    JhiDataUtils,
-                    DatePipe,
-                    {
-                        provide: ActivatedRoute,
-                        useValue: new MockActivatedRoute({id: 123})
-                    },
-                    GameService,
-                    JhiEventManager
+                    GameService
                 ]
-            }).overrideTemplate(GameDetailComponent, '')
+            })
+            .overrideTemplate(GameDetailComponent, '')
             .compileComponents();
         }));
 
@@ -44,16 +34,16 @@ describe('Component Tests', () => {
 
         describe('OnInit', () => {
             it('Should call load all on init', () => {
-            // GIVEN
+                // GIVEN
 
-            spyOn(service, 'find').and.returnValue(Observable.of(new Game(10)));
+                spyOn(service, 'find').and.returnValue(Observable.of(new Game(123)));
 
-            // WHEN
-            comp.ngOnInit();
+                // WHEN
+                comp.ngOnInit();
 
-            // THEN
-            expect(service.find).toHaveBeenCalledWith(123);
-            expect(comp.game).toEqual(jasmine.objectContaining({id: 10}));
+                // THEN
+                expect(service.find).toHaveBeenCalledWith(123);
+                expect(comp.game).toEqual(jasmine.objectContaining({id: 123}));
             });
         });
     });

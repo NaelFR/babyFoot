@@ -1,9 +1,6 @@
-import { Injectable } from '@angular/core';
-import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from '../../shared';
-import { JhiPaginationUtil } from 'ng-jhipster';
-
 import { TournamentComponent } from './tournament.component';
 import { TournamentDetailComponent } from './tournament-detail.component';
 import { TournamentPopupComponent } from './tournament-dialog.component';

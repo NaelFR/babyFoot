@@ -2,7 +2,7 @@ import './vendor.ts';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { Ng2Webstorage } from 'ng2-webstorage';
+import { Ng2Webstorage } from 'ngx-webstorage';
 
 import { BabyFootManagerSharedModule, UserRouteAccessService } from './shared';
 import { BabyFootManagerAppRoutingModule} from './app-routing.module';

@@ -3,10 +3,10 @@ package com.mycompany.myapp.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
+
 import java.io.Serializable;
 import java.time.ZonedDateTime;
 import java.util.Objects;
-
 
 /**
  * A Game.
