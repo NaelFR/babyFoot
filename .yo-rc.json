@@ -4,7 +4,7 @@
       "packageName": "com.mycompany.myapp",
       "nativeLanguage": "fr"
     },
-    "jhipsterVersion": "4.11.1",
+    "jhipsterVersion": "4.13.0",
     "baseName": "BabyFootManager",
     "packageName": "com.mycompany.myapp",
     "packageFolder": "com/mycompany/myapp",
