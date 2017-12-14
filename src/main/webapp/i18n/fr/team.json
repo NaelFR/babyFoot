@@ -1,0 +1,26 @@
+{
+    "babyFootManagerApp": {
+        "team" : {
+            "home": {
+                "title": "Teams",
+                "createLabel": "Créer un nouveau Team",
+                "createOrEditLabel": "Créer ou éditer un Team"
+            },
+            "created": "Un nouveau Team a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Team avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Team avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Team {{ id }} ?"
+            },
+            "detail": {
+                "title": "Team"
+            },
+            "teamName": "Team Name",
+            "teamName1": "Team Name 1",
+            "teamName2": "Team Name 2",
+            "teamName": "Team Name",
+            "tournaments": "Tournaments",
+            "playOffs": "Play Offs"
+        }
+    }
+}

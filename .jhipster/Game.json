@@ -1,0 +1,54 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "playOff",
+            "otherEntityName": "playOff",
+            "otherEntityField": "playOffName"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "tournament",
+            "otherEntityName": "tournament",
+            "otherEntityField": "tournamentName"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "team1",
+            "otherEntityName": "team",
+            "otherEntityField": "teamName"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "team2",
+            "otherEntityName": "team",
+            "otherEntityField": "teamName"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "score1",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "score2",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20171205125757",
+    "entityTableName": "game",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

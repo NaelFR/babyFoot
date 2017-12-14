@@ -1,0 +1,92 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myGameLabel" jhiTranslate="babyFootManagerApp.game.home.createOrEditLabel">Create or edit a Game</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!game.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="game.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="babyFootManagerApp.game.score1" for="field_score1">Score 1</label>
+            <input type="number" class="form-control" name="score1" id="field_score1"
+                [(ngModel)]="game.score1" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="babyFootManagerApp.game.score2" for="field_score2">Score 2</label>
+            <input type="number" class="form-control" name="score2" id="field_score2"
+                [(ngModel)]="game.score2" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="babyFootManagerApp.game.startDate" for="field_startDate">Start Date</label>
+            <div class="d-flex">
+                <input id="field_startDate" type="datetime-local" class="form-control" name="startDate" [(ngModel)]="game.startDate"
+                required/>
+            </div>
+            <div [hidden]="!(editForm.controls.startDate?.dirty && editForm.controls.startDate?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.startDate?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.startDate?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="babyFootManagerApp.game.playOff" for="field_playOff">Play Off</label>
+            <select class="form-control" id="field_playOff" name="playOff" [(ngModel)]="game.playOff" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="playOffOption.id === game.playOff?.id ? game.playOff : playOffOption" *ngFor="let playOffOption of playoffs; trackBy: trackPlayOffById">{{playOffOption.playOffName}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="babyFootManagerApp.game.tournament" for="field_tournament">Tournament</label>
+            <select class="form-control" id="field_tournament" name="tournament" [(ngModel)]="game.tournament" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="tournamentOption.id === game.tournament?.id ? game.tournament : tournamentOption" *ngFor="let tournamentOption of tournaments; trackBy: trackTournamentById">{{tournamentOption.tournamentName}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="babyFootManagerApp.game.team1" for="field_team1">Team 1</label>
+            <select class="form-control" id="field_team1" name="team1" [(ngModel)]="game.team1"  required>
+                <option *ngIf="!editForm.value.team1" [ngValue]="null" selected></option>
+                <option [ngValue]="teamOption.id === game.team1?.id ? game.team1 : teamOption" *ngFor="let teamOption of teams; trackBy: trackTeamById">{{teamOption.teamName}}</option>
+            </select>
+        </div>
+        <div [hidden]="!(editForm.controls.team1?.dirty && editForm.controls.team1?.invalid)">
+            <small class="form-text text-danger"
+                [hidden]="!editForm.controls.team1?.errors?.required" jhiTranslate="entity.validation.required">
+                This field is required.
+            </small>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="babyFootManagerApp.game.team2" for="field_team2">Team 2</label>
+            <select class="form-control" id="field_team2" name="team2" [(ngModel)]="game.team2"  required>
+                <option *ngIf="!editForm.value.team2" [ngValue]="null" selected></option>
+                <option [ngValue]="teamOption.id === game.team2?.id ? game.team2 : teamOption" *ngFor="let teamOption of teams; trackBy: trackTeamById">{{teamOption.teamName}}</option>
+            </select>
+        </div>
+        <div [hidden]="!(editForm.controls.team2?.dirty && editForm.controls.team2?.invalid)">
+            <small class="form-text text-danger"
+                [hidden]="!editForm.controls.team2?.errors?.required" jhiTranslate="entity.validation.required">
+                This field is required.
+            </small>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

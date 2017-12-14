@@ -1,0 +1,57 @@
+
+<div *ngIf="game">
+    <h2><span jhiTranslate="babyFootManagerApp.game.detail.title">Game</span> {{game.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="babyFootManagerApp.game.score1">Score 1</span></dt>
+        <dd>
+            <span>{{game.score1}}</span>
+        </dd>
+        <dt><span jhiTranslate="babyFootManagerApp.game.score2">Score 2</span></dt>
+        <dd>
+            <span>{{game.score2}}</span>
+        </dd>
+        <dt><span jhiTranslate="babyFootManagerApp.game.startDate">Start Date</span></dt>
+        <dd>
+            <span>{{game.startDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="babyFootManagerApp.game.playOff">Play Off</span></dt>
+        <dd>
+            <div *ngIf="game.playOff">
+                <a [routerLink]="['/play-off', game.playOff?.id]">{{game.playOff?.playOffName}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="babyFootManagerApp.game.tournament">Tournament</span></dt>
+        <dd>
+            <div *ngIf="game.tournament">
+                <a [routerLink]="['/tournament', game.tournament?.id]">{{game.tournament?.tournamentName}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="babyFootManagerApp.game.team1">Team 1</span></dt>
+        <dd>
+            <div *ngIf="game.team1">
+                <a [routerLink]="['/team', game.team1?.id]">{{game.team1?.teamName}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="babyFootManagerApp.game.team2">Team 2</span></dt>
+        <dd>
+            <div *ngIf="game.team2">
+                <a [routerLink]="['/team', game.team2?.id]">{{game.team2?.teamName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'game/'+ game.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

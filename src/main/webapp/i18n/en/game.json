@@ -1,0 +1,27 @@
+{
+    "babyFootManagerApp": {
+        "game" : {
+            "home": {
+                "title": "Games",
+                "createLabel": "Create a new Game",
+                "createOrEditLabel": "Create or edit a Game"
+            },
+            "created": "A new Game is created with identifier {{ param }}",
+            "updated": "A Game is updated with identifier {{ param }}",
+            "deleted": "A Game is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Game {{ id }}?"
+            },
+            "detail": {
+                "title": "Game"
+            },
+            "score1": "Score 1",
+            "score2": "Score 2",
+            "startDate": "Start Date",
+            "playOff": "Play Off",
+            "tournament": "Tournament",
+            "team1": "Team 1",
+            "team2": "Team 2"
+        }
+    }
+}
