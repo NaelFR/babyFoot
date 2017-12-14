@@ -16,6 +16,16 @@ Main page styles
     justify-content: center;
 }
 
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    button {
+        color: black;
+    }
+}
+
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
 @media
 only screen and (-webkit-min-device-pixel-ratio: 2),

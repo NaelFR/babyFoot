@@ -5,6 +5,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgJhipsterModule } from 'ng-jhipster';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { CookieModule } from 'ngx-cookie';
+import 'hammerjs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material';
 
 @NgModule({
     imports: [
@@ -16,14 +19,18 @@ import { CookieModule } from 'ngx-cookie';
             defaultI18nLang: 'fr'
         }),
         InfiniteScrollModule,
-        CookieModule.forRoot()
+        CookieModule.forRoot(),
+        BrowserAnimationsModule,
+        MatButtonModule,
     ],
     exports: [
         FormsModule,
         CommonModule,
         NgbModule,
         NgJhipsterModule,
-        InfiniteScrollModule
+        InfiniteScrollModule,
+        BrowserAnimationsModule,
+        MatButtonModule,
     ]
 })
 export class BabyFootManagerSharedLibsModule {}
