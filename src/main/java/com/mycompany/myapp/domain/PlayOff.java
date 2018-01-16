@@ -156,10 +156,29 @@ public class PlayOff implements Serializable {
         return this;
     }
 
-    public void initPlayOff(){
+    public void initPlayOff() {
         Team[] equipes = (Team[]) teams.toArray();
-        for (int i = 0; i < equipes.length; i = i + 2){
-            games.add(new Game(equipes[i], equipes[i+1], this, null, ZonedDateTime.now()));
+        games.clear();
+        for (int i = 0; i < equipes.length; i = i + 2) {
+            games.add(new Game(equipes[i], equipes[i + 1], this, null, ZonedDateTime.now()));
+        }
+    }
+
+    public void updateRound() {
+        boolean rondesTerminees = true;
+        for (Game game : games)
+            if (game.getScore1() != 10 || game.getScore2() != 10) {
+                rondesTerminees = false;
+            }
+        if(rondesTerminees){
+            games.forEach(game -> {
+                if(game.getScore1() == 10)
+                    teams.remove(game.getTeam2());
+                else
+                    teams.remove(game.getTeam1());
+            });
+            if(teams.size() > 1)
+                this.initPlayOff();
         }
     }
 
