@@ -142,3 +142,9 @@ Desktop.ini
 # ESLint
 ######################
 .eslintcache
+
+out/production/resources/
+
+package-lock\.json
+
+package\.json

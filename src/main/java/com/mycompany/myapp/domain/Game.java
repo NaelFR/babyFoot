@@ -46,6 +46,16 @@ public class Game implements Serializable {
     @NotNull
     private Team team2;
 
+    public Game(Team team1, Team team2, PlayOff playOff, Tournament tournament, ZonedDateTime startDate) {
+        this.score1 = 0;
+        this.score2 = 0;
+        this.startDate = startDate;
+        this.playOff = playOff;
+        this.tournament = tournament;
+        this.team1 = team1;
+        this.team2 = team2;
+    }
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;

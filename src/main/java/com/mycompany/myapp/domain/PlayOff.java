@@ -8,6 +8,7 @@ import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.time.ZonedDateTime;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 import java.util.Objects;
 
@@ -153,6 +154,13 @@ public class PlayOff implements Serializable {
         this.teams.remove(team);
         team.getPlayOffs().remove(this);
         return this;
+    }
+
+    public void initPlayOff(){
+        Team[] equipes = (Team[]) teams.toArray();
+        for (int i = 0; i < equipes.length; i = i + 2){
+            games.add(new Game(equipes[i], equipes[i+1], this, null, ZonedDateTime.now()));
+        }
     }
 
     public void setTeams(Set<Team> teams) {
